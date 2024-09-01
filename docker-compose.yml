@@ -1,0 +1,27 @@
+version: '3'
+services:
+  ollama:
+    image: swr.cn-north-4.myhuaweicloud.com/ddn-k8s/docker.io/ollama/ollama:0.3.6
+    volumes:
+      - ./data/ollama:/root/.ollama
+  pgai:
+    image: pgai-pgai:latest
+    environment:
+      - POSTGRES_DB=ai
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "15432:5432"
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+  busybox:
+    image: busybox:latest
+    stdin_open: true 
+    tty: true
+  dbt:
+    image: ghcr.io/dbt-labs/dbt-postgres:1.8.2
+    volumes:
+      - ./code:/app/user
+      - ./config:/root/.dbt
+    stdin_open: true 
+    tty: true

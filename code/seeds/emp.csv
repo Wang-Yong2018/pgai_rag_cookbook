@@ -1,0 +1,15 @@
+empno,ename,job,mgr,hiredate,sal,comm,deptno
+7369,smith,clerk,7902,17-dec-2005,800,,20
+7499,allen,salesman,7698,20-feb-2006,1600,300,30
+7521,ward,salesman,7698,22-feb-2006,1250,500,30
+7566,jones,manager,7839,02-apr-2006,2975,,20
+7654,martin,salesman,7698,28-sep-2006,1250,1400,30
+7698,blake,manager,7839,01-may-2006,2850,,30
+7782,clark,manager,7839,09-jun-2006,2450,,10
+7788,scott,analyst,7566,09-dec-2007,3000,,20
+7839,king,president,17-nov-2006,5000,,10
+7844,turner,salesman,7698,08-sep-2006,1500,0,30
+7876,adams,clerk,7788,12-jan-2008,1100,,20
+7900,james,clerk,7698,03-dec-2006,950,,30
+7902,ford,analyst,7566,03-dec-2006,3000,,20
+7934,miller,clerk,7782,23-jan-2007,1300,,10
