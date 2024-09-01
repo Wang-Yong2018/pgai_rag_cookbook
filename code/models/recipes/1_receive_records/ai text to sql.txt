@@ -1,0 +1,17 @@
+TEXT to SQL
+
+- generate the meta data 
+ - each table will be one line date
+ - columns should include id，table name, table column and date type, foreign keys and sample data for example 5 lines
+ - embedding the sql into meta vector , and sample data vector
+- rag the meta data and generate sql 
+ - embedding the question and compare the cosine similarity with meta vector and data vector
+ - concentrate the generation question with 
+  - standard requirement prompt
+  - data section with filter the top 3-5 records
+  - user question
+- ask llm for generate sql
+- use the llm generate sql to ask database 
+- provide the final data set
+
+- generate insight report if need 
