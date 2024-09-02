@@ -1,0 +1,5 @@
+id,type,content,create_time
+1,sql,"You have a table named emp and want to see all of the data in it.",2024-09-01
+2,sql,"view all employees assigned to department number 10",2024-09-01
+3,sql,"find all the employees in department 10 along with any employees who earn a commission along with any employees in department 20 who earn at most $2000",2024-09-01
+4,sql,"see only name department number and salary for employees:",2024-09-01
