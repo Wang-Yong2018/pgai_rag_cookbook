@@ -42,15 +42,28 @@ column_json AS (
     GROUP BY
         table_id
 )
+,model as (
+	select id as name 
+	from 
+		t_openai_model tom  
+	where id = 'gpt-4o-mini'
+)
 ,sample_records AS (
    select 
-    table_name, table_sample 
+    table_name, table_sample,
+    openai_chat_complete(model.name,
+			jsonb_build_array(
+				jsonb_build_object('role', 'user', 'content', 
+    'as a data analyst, pls help generate less than 50 words short description for below data information: \n-----\n'||
+    'table name: ' ||table_name ||
+    '\n----\n'||table_sample))) as chat_completion 
    from 
-    {{ref('t_tbl_sample')}}
+    model cross join {{ref('t_tbl_sample')}}
 )
 SELECT
     t.table_id AS id,
     t.schema_name,
+    chat_completion['choices'][0]['message']['content']::text as data_description,
     t.table_name,
     c.column_info,
     s.table_sample
