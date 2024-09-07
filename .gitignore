@@ -164,4 +164,4 @@ cython_debug/
 /config
 /dbt-env
 api_check/deepseek_check.py
-.vscode
+/.vscode
